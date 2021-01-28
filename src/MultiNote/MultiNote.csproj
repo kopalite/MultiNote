@@ -27,8 +27,4 @@
     <PackageReference Include="Slack.Webhooks" Version="1.1.4" />
   </ItemGroup>
 
-  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
-    <Exec Command="xcopy /Y &quot;$(ProjectDir)bin\Release\net5.0\win-x64\publish&quot; &quot;$(ProjectDir)nuget&quot;" />
-  </Target>
-
 </Project>

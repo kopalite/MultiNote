@@ -1,6 +1,11 @@
 ﻿namespace MultiNote
 {
-    internal class NotifierConfig
+    public class MultiNoteConfig
+    {
+        public SlackConfig SlackConfig { get; set; }
+    }
+
+    public class SlackConfig
     {
         public string MessagePrefix { get; set; }
 

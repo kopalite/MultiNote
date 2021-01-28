@@ -8,7 +8,7 @@ namespace MultiNote
         public static void AddNotifier(this IServiceCollection services, IConfiguration config)
         {
             services.AddTransient<INotifier, Notifier>();
-            services.Configure<NotifierConfig>(config);
+            services.Configure<MultiNoteConfig>(config.GetSection(nameof(MultiNoteConfig)));
         }
     }
 }
