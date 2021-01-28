@@ -1,0 +1,34 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="nuget\Microsoft.Extensions.Configuration.Abstractions.dll" />
+    <None Remove="nuget\Microsoft.Extensions.Configuration.Binder.dll" />
+    <None Remove="nuget\Microsoft.Extensions.DependencyInjection.Abstractions.dll" />
+    <None Remove="nuget\Microsoft.Extensions.Logging.Abstractions.dll" />
+    <None Remove="nuget\Microsoft.Extensions.Options.ConfigurationExtensions.dll" />
+    <None Remove="nuget\Microsoft.Extensions.Options.dll" />
+    <None Remove="nuget\Microsoft.Extensions.Primitives.dll" />
+    <None Remove="nuget\MultiNote.deps.json" />
+    <None Remove="nuget\MultiNote.dll" />
+    <None Remove="nuget\MultiNote.pdb" />
+    <None Remove="nuget\Newtonsoft.Json.dll" />
+    <None Remove="nuget\Slack.Webhooks.dll" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.Configuration.Abstractions" Version="5.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="5.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Options" Version="5.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Options.ConfigurationExtensions" Version="5.0.0" />
+    <PackageReference Include="Slack.Webhooks" Version="1.1.4" />
+  </ItemGroup>
+
+  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+    <Exec Command="xcopy /Y &quot;$(ProjectDir)bin\Release\net5.0\win-x64\publish&quot; &quot;$(ProjectDir)nuget&quot;" />
+  </Target>
+
+</Project>

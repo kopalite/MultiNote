@@ -348,3 +348,14 @@ MigrationBackup/
 
 # Ionide (cross platform F# VS Code tools) working folder
 .ionide/
+/src/MultiNote/nuget/Slack.Webhooks.dll
+/src/MultiNote/nuget/Newtonsoft.Json.dll
+/src/MultiNote/nuget/MultiNote.dll
+/src/MultiNote/nuget/MultiNote.deps.json
+/src/MultiNote/nuget/Microsoft.Extensions.Primitives.dll
+/src/MultiNote/nuget/Microsoft.Extensions.Options.dll
+/src/MultiNote/nuget/Microsoft.Extensions.Options.ConfigurationExtensions.dll
+/src/MultiNote/nuget/Microsoft.Extensions.Logging.Abstractions.dll
+/src/MultiNote/nuget/Microsoft.Extensions.DependencyInjection.Abstractions.dll
+/src/MultiNote/nuget/Microsoft.Extensions.Configuration.Binder.dll
+/src/MultiNote/nuget/Microsoft.Extensions.Configuration.Abstractions.dll
