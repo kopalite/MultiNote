@@ -25,7 +25,7 @@ namespace MultiNote.Test
             var c3 = new Mock<INotifierChannel>();
             c3.Setup(x => x.InfoAsync(It.IsAny<string[]>())).Throws(new Exception("erroneous channel should not affect others!"));
             c3.Setup(x => x.AlertAsync(It.IsAny<string[]>())).Throws(new Exception("erroneous channel should not affect others!"));
-            var channels = new List<INotifierChannel>(new[] { c1.Object, c2.Object, c3.Object });
+            var channels = new List<INotifierChannel>(new[] { c1.Object, c3.Object, c2.Object  });
 
             var loggerMock = new Mock<ILogger<Notifier>>();
 
