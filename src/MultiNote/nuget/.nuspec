@@ -5,7 +5,7 @@
 		<id>MultiNote</id>
 
 		<!-- Package version number that is used when resolving dependencies -->
-		<version>1.1.6</version>
+		<version>1.1.8</version>
 
 		<!-- Authors contain text that appears directly on the gallery -->
 		<authors>Ivan Kopcanski</authors>
@@ -29,7 +29,7 @@
 		<requireLicenseAcceptance>false</requireLicenseAcceptance>
 
 		<!-- Any details about this particular release -->
-		<releaseNotes>Dependency on Slack.Webhooks removed</releaseNotes>
+		<releaseNotes>Dependency on Slack.Webhooks removed; support for future channels added; robust error handling introduced;</releaseNotes>
 
 		<!-- 
             The description can be used in package manager UI. Note that the
