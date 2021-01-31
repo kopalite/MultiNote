@@ -359,3 +359,6 @@ MigrationBackup/
 /src/MultiNote/nuget/Microsoft.Extensions.DependencyInjection.Abstractions.dll
 /src/MultiNote/nuget/Microsoft.Extensions.Configuration.Binder.dll
 /src/MultiNote/nuget/Microsoft.Extensions.Configuration.Abstractions.dll
+/src/MultiNote/nuget/Microsoft.Extensions.Logging.dll
+/src/MultiNote/nuget/Microsoft.Extensions.Http.dll
+/src/MultiNote/nuget/Microsoft.Extensions.DependencyInjection.dll
