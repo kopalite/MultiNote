@@ -19,7 +19,7 @@ namespace MultiNote.Test
         private readonly SlackChannel _slackChannel;
         private bool _isEnabled;
         private bool _isWebhookOK;
-        private SlackMessageLog _mesageLog;
+        private SlackMessageLog _messageLog;
 
         public SlackChannelTest()
         {
@@ -38,7 +38,7 @@ namespace MultiNote.Test
 
             var httpServer = new TestServer(new WebHostBuilder().UseStartup<SlackStartup>());
             var httpClient = httpServer.CreateClient();
-            _mesageLog = httpServer.Services.GetService<SlackMessageLog>();
+            _messageLog = httpServer.Services.GetService<SlackMessageLog>();
 
             var loggerMock = new Mock<ILogger<SlackChannel>>();
 
@@ -57,7 +57,7 @@ namespace MultiNote.Test
             await _slackChannel.AlertAsync("test_message1");
 
             //Assert
-            Assert.True(_mesageLog.Messages.Count() == 0);
+            Assert.True(_messageLog.Messages.Count() == 0);
         }
 
         [Fact]
@@ -68,13 +68,12 @@ namespace MultiNote.Test
             _isWebhookOK = true;
 
             //Act
-            await _slackChannel.InfoAsync("test_message1");
-            await _slackChannel.InfoAsync("test_message2");
+            await _slackChannel.InfoAsync("test_message1", "test_message2");
 
             //Assert
-            Assert.True(_mesageLog.Messages.Count() == 2);
-            Assert.True(_mesageLog.Messages.First() == ":info_emoji: : test_message1");
-            Assert.True(_mesageLog.Messages.Last() == ":info_emoji: : test_message2");
+            Assert.True(_messageLog.Messages.Count() == 2);
+            Assert.True(_messageLog.Messages.First() == ":info_emoji: : test_message1");
+            Assert.True(_messageLog.Messages.Last() == ":info_emoji: : test_message2");
         }
 
         [Fact]
@@ -85,13 +84,12 @@ namespace MultiNote.Test
             _isWebhookOK = true;
 
             //Act
-            await _slackChannel.AlertAsync("test_message1");
-            await _slackChannel.AlertAsync("test_message2");
+            await _slackChannel.AlertAsync("test_message1", "test_message2");
 
             //Assert
-            Assert.True(_mesageLog.Messages.Count() == 2);
-            Assert.True(_mesageLog.Messages.First() == ":alert_emoji: : test_message1");
-            Assert.True(_mesageLog.Messages.Last() == ":alert_emoji: : test_message2");
+            Assert.True(_messageLog.Messages.Count() == 2);
+            Assert.True(_messageLog.Messages.First() == ":alert_emoji: : test_message1");
+            Assert.True(_messageLog.Messages.Last() == ":alert_emoji: : test_message2");
         }
 
 
@@ -106,7 +104,7 @@ namespace MultiNote.Test
             await _slackChannel.InfoAsync("test_message");
 
             //Assert
-            Assert.True(_mesageLog.Messages.Count() == 1);
+            Assert.True(_messageLog.Messages.Count() == 1);
         }
 
         [Fact]
@@ -120,7 +118,7 @@ namespace MultiNote.Test
             await _slackChannel.AlertAsync("test_message");
 
             //Assert
-            Assert.True(_mesageLog.Messages.Count() == 1);
+            Assert.True(_messageLog.Messages.Count() == 1);
         }
 
         [Fact]
@@ -134,7 +132,7 @@ namespace MultiNote.Test
             await _slackChannel.InfoAsync("test_message");
 
             //Assert
-            Assert.True(_mesageLog.Messages.Count() == 0);
+            Assert.True(_messageLog.Messages.Count() == 0);
         }
 
         [Fact]
@@ -148,7 +146,7 @@ namespace MultiNote.Test
             await _slackChannel.AlertAsync("test_message");
 
             //Assert
-            Assert.True(_mesageLog.Messages.Count() == 0);
+            Assert.True(_messageLog.Messages.Count() == 0);
         }
     }
 }

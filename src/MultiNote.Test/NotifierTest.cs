@@ -36,7 +36,7 @@ namespace MultiNote.Test
             await _notifier.InfoAsync("info");
             await _notifier.AlertAsync("alert");
 
-            //Arrange
+            //Assert
             Assert.Equal(4, _callsCounter);
         }
     }
