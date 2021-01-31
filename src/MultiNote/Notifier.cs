@@ -29,31 +29,33 @@ namespace MultiNote
 
         public async Task InfoAsync(params string[] messages)
         {
-            try
+
+            foreach (var channel in _channels)
             {
-                foreach (var channel in _channels)
+                try
                 {
                     await channel.InfoAsync(messages);
                 }
+                catch (Exception ex)
+                {
+                    _logger?.LogError($"Exception while sending info message for channel {channel.GetType().Name}. {ex.Message}");
+                }
             }
-            catch (Exception ex)
-            {
-                _logger?.LogError($"Exception while sending info message. {ex.Message}");
-            }
+            
         }
 
         public async Task AlertAsync(params string[] messages)
         {
-            try
+            foreach (var channel in _channels)
             {
-                foreach (var channel in _channels)
+                try
                 {
-                    await channel.AlertAsync(messages);
+                    await channel.InfoAsync(messages);
                 }
-            }
-            catch (Exception ex)
-            {
-                _logger?.LogError($"Exception while sending alert message. {ex.Message}");
+                catch (Exception ex)
+                {
+                    _logger?.LogError($"Exception while sending info message for channel {channel.GetType().Name}. {ex.Message}");
+                }
             }
         }
 
