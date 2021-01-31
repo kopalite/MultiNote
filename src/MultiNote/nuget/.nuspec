@@ -5,7 +5,7 @@
 		<id>MultiNote</id>
 
 		<!-- Package version number that is used when resolving dependencies -->
-		<version>1.0.9</version>
+		<version>1.1.5</version>
 
 		<!-- Authors contain text that appears directly on the gallery -->
 		<authors>Ivan Kopcanski</authors>
@@ -17,7 +17,7 @@
 		<owners>kopalite</owners>
 
 		<!-- Project URL provides a link for the gallery -->
-		<projectUrl>https://github.com/kopalite/Slack.Webhooks.Extensions</projectUrl>
+		<projectUrl>https://github.com/kopalite/MultiNote</projectUrl>
 
 		<!-- License information is displayed on the gallery -->
 		<license type="expression">MIT</license>
@@ -35,18 +35,23 @@
             The description can be used in package manager UI. Note that the
             nuget.org gallery uses information you add in the portal. 
         -->
-		<description>Dependency Injection support for Slack.Webhooks nuget. For details, please refer the project README file on GitHub.</description>
+		<description>MultiNote is notification library utilizing multiple messaging channels like email, Slack webhooks etc. For details, please refer the project README file on GitHub.</description>
 
 		<!-- Copyright information -->
 		<copyright>Copyright ©2021 kopalite</copyright>
 
 		<!-- Tags appear in the gallery and can be used for tag searches -->
-		<tags>slack webhooks extensions dependencyinjection</tags>
+		<tags>notifications email slack dependencyinjection</tags>
 
 		<!-- Dependencies are automatically installed when the package is installed -->
 		<dependencies>
-			<!--<dependency id="Slack.Webhooks" version="1.1.4" />-->
-			<group targetFramework="net5.0" />
+			<group targetFramework="net5.0">
+				    <dependency id="Microsoft.Extensions.Configuration.Abstractions" version="5.0.0" />
+					<dependency id="Microsoft.Extensions.Logging.Abstractions" version="5.0.0" />
+					<dependency id="Microsoft.Extensions.Options" version="5.0.0" />
+					<dependency id="Microsoft.Extensions.Options.ConfigurationExtensions" version="5.0.0" />
+					<dependency id="Slack.Webhooks" version="1.1.4" />
+			</group>
 		</dependencies>
 	</metadata>
 
