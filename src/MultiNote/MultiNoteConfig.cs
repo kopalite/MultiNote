@@ -7,9 +7,13 @@
 
     public class SlackConfig
     {
-        public string MessagePrefix { get; set; }
+        public bool IsEnabled { get; set; }
+
+        public string InfoPrefix { get; set; }
 
         public string InfoWebhook { get; set; }
+
+        public string AlertPrefix { get; set; }
 
         public string AlertWebhook { get; set; }
     }

@@ -29,7 +29,7 @@
 		<requireLicenseAcceptance>false</requireLicenseAcceptance>
 
 		<!-- Any details about this particular release -->
-		<releaseNotes>Initial version</releaseNotes>
+		<releaseNotes>Dependency on Slack.Webhooks removed</releaseNotes>
 
 		<!-- 
             The description can be used in package manager UI. Note that the
@@ -47,10 +47,11 @@
 		<dependencies>
 			<group targetFramework="net5.0">
 				    <dependency id="Microsoft.Extensions.Configuration.Abstractions" version="5.0.0" />
+					<dependency id="Microsoft.Extensions.Http" version="5.0.0" />
 					<dependency id="Microsoft.Extensions.Logging.Abstractions" version="5.0.0" />
 					<dependency id="Microsoft.Extensions.Options" version="5.0.0" />
 					<dependency id="Microsoft.Extensions.Options.ConfigurationExtensions" version="5.0.0" />
-					<dependency id="Slack.Webhooks" version="1.1.4" />
+					<dependency id="Newtonsoft.Json" version="12.0.3" />
 			</group>
 		</dependencies>
 	</metadata>
